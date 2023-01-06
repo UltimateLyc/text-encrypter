@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="./src/styles/styles.css">
     <link rel="shortcut icon" href="./src/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/styles.css">
 
     <!-- JavaScript -->
     <script  defer src="./src/js/index.js"></script>
@@ -20,21 +21,26 @@
     </header>
 
     <main>
-        <div>
-            <h2>Encriptador de texto</h2>
-            <section>
+        <section id="data">
+            <div id="text-container">
                 <input type="text" id="text" placeholder="Ingresa tu texto aqui">
-                <!-- <textarea name="" id="encriptar_texto" cols="50" rows="10" placeholder="texto a encriptar"></textarea> -->
-                <br>
-                <button onclick="encriptar()">Encriptar</button>
-            </section>
-        </div>
+            </div>
 
-        <div>
-            <section>           
-                <button onclick="desencriptar()">Desencriptar</button>
-            </section>
-        </div>
+            <div id="button-container">
+                <div id="encrypt">
+                    <button class="btn-encrypt" onclick="encrypt()">Encriptar</button>
+                </div>
+
+                <div id="desencrypt">
+                    <button class="btn-desencrypt" onclick="desdesencrypt()">Desencriptar</button>
+                </div>
+            </div>
+        </section>
+        <section id="screen">
+            <div id="console">
+
+            </div>
+        </section>
     </main>
     
 </body>

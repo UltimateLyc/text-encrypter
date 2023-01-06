@@ -8,8 +8,8 @@
     La letra "u" es convertida para "ufat"
  */
 
-const encriptar = () => {
-    console.log('encriptar')
+const encrypt = () => {
+    console.log('encrypt')
     let getText = document.getElementById('text').value
     getText = getText.toLowerCase() // volvemos a minusculas el texto
 
@@ -37,6 +37,6 @@ const encriptar = () => {
     
 }
 
-const desencriptar = () => {
-    console.log('desencriptar')
+const desdesencrypt = () => {
+    console.log('desdesencrypt')
 }
