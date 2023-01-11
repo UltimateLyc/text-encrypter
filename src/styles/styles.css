@@ -1,14 +1,131 @@
 body{
     background: #D8DFE8;
-
 }
 
 /* Estilos para resolucion de computadora */
 
+@media screen and (max-width: 1920px){
+    body{
+        width: 1280px;
+        height: 100vh;
+        margin: 0 auto;
+    }
+
+    main{
+        display: flex;
+    }
+
+    #data{
+        width: 70%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #text-container{
+        border: 1px solid blue;
+        margin-top: 14px;   
+        padding: 48px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #text{
+        color: #0A3871;
+        font-size: 24px;
+        
+        outline: none;
+        resize: none;
+        background-color: #D8DFE8;
+        border: none;
+    }
+
+    #button-container{
+        border: 1px solid red;
+        padding: 24px 0;
+    }
+
+    #button-container{
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 14px;
+    }
+
+    .btn{
+        width: 328px;
+        height: 57px;
+        font-size: 16px;
+        border-radius: 20px;
+        border: 1px solid #0A3871;
+        cursor: pointer;
+    }
+
+    .btn-encrypt{
+        background-color: #0A3871;
+        color: white;
+    }
+
+    .btn-desencrypt, .btn-copy{
+        color: #0A3871;
+    }
+
+    .btn-copy{
+        justify-content: center;
+    }
 
 
+    #screen{
+        width: 30%;
+        height: 100vh;
+    }
 
-/* Estilos para resolucion de tableta */
+    #console{
+        background-color: white;
+        margin: 5%;
+        height: 90%;
+        padding: 20px;
+        border-radius: 32px;    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .result-text{
+        color: grey;
+        font-size: 24px;
+        outline: none;
+        resize: none;
+        background-color: white;
+        border: none;
+    }
+
+    .result-text::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+    
+    .result-text::-webkit-scrollbar:vertical {
+        width:10px;
+    }
+
+    .result-text:-webkit-scrollbar-button:increment,.result-text::-webkit-scrollbar-button {
+        display: none;
+    } 
+
+    .result-text::-webkit-scrollbar-thumb {
+        background-color: #0a38717a;
+        border-radius: 20px;
+        border: 3px solid white;
+    }
+    
+    .result-text::-webkit-scrollbar-track {
+        border-radius: 10px;  
+    }
 
 
-/* Estilos para resolucion de celular */
+    #copy{
+        display: flex;
+        justify-content: center;
+    }
+
+}
