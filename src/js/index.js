@@ -36,7 +36,7 @@ const encrypt = () => {
     console.log("🚀 ~ getText", getText)
     printText.innerHTML=`
         <div id="result-container">
-            <textarea disable class="result-text" cols="20" rows="22">${getText}</textarea>
+            <textarea disable class="result-text test" cols="20" rows="22">${getText}</textarea>
         </div>
         <div id="copy">
             <button class="btn btn-copy" onclick="copy()">Copiar</button>

@@ -100,25 +100,25 @@ body{
         border: none;
     }
 
-    .result-text::-webkit-scrollbar {
+    .test::-webkit-scrollbar {
         -webkit-appearance: none;
     }
     
-    .result-text::-webkit-scrollbar:vertical {
-        width:10px;
+    .test::-webkit-scrollbar:vertical {
+        width:4px;
     }
 
-    .result-text:-webkit-scrollbar-button:increment,.result-text::-webkit-scrollbar-button {
+    .test:-webkit-scrollbar-button:increment,.test::-webkit-scrollbar-button {
         display: none;
     } 
 
-    .result-text::-webkit-scrollbar-thumb {
+    .test::-webkit-scrollbar-thumb {
         background-color: #0a38717a;
         border-radius: 20px;
-        border: 3px solid white;
+        
     }
     
-    .result-text::-webkit-scrollbar-track {
+    .test::-webkit-scrollbar-track {
         border-radius: 10px;  
     }
 
