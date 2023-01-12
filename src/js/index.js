@@ -35,8 +35,7 @@ const encrypt = () => {
             }
         }
 
-        getText = array.join('') // Convetimos el array en un string de nuevo
-        printResult(getText)
+        printResult(array)
         clearInput()
 
     }
@@ -57,29 +56,33 @@ const desdesencrypt = () => {
         {
             if(array[i]=== 'o'){
                 if(array[i+1] === 'b'){ // for O
-                    array.splice(i, 4, 'o')
+                    spliceArray(array, i, 4, 'o')
+                    /* array.splice(i, 4, 'o') */
                 }
             }else if(array[i] === 'a'){ // for A
                 if(array[i+1] === 'i'){
-                    array.splice(i, 2, 'a')
+                    spliceArray(array, i, 2, 'a')
+                    /* array.splice(i, 2, 'a') */
                 }
             }else if (array[i] === 'e'){ // for E
                 if(array[i+1] === 'n'){
-                    array.splice(i,5, 'e')
+                    spliceArray(array, i, 5, 'e')
+                    /* array.splice(i,5, 'e') */
                 }
             }else if(array[i] === 'i'){ // for I
                 if(array[i+1] === 'm'){
-                    array.splice(i, 4, 'i')
+                    spliceArray(array, i, 4, 'i')
+                    /* array.splice(i, 4, 'i') */
                 }
             }else if(array[i] === 'u'){ // for U
                 if(array[i+1] === 'f'){
-                    array.splice(i, 4, 'u')
+                    spliceArray(array, i, 4, 'u')
+                    /* array.splice(i, 4, 'u') */
                 }
             }
         }
 
-        getText = array.join('')
-        printResult(getText)
+        printResult(array)
         clearInput()
     }
 }
@@ -95,10 +98,11 @@ const isEmpty = () => {
         `
 }
 
-const printResult = (text) => {
+const printResult = (array) => {
+    let newText = array.join('') // Convetimos el array en un string de nuevo
     printText.innerHTML=`
         <div id="result-container">
-            <textarea disable class="result-text test" cols="20" rows="22">${text}</textarea>
+            <textarea disable class="result-text test" cols="20" rows="22">${newText}</textarea>
         </div>
         <div id="copy">
             <button class="btn btn-copy" onclick="copy()">Copiar</button>
@@ -108,4 +112,9 @@ const printResult = (text) => {
 
 const clearInput = () => {
     document.getElementById("text").value = ""
+}
+
+const spliceArray = (text ,position, numberDelete, vowel) => {
+    text.splice(position, numberDelete, vowel)
+    return text
 }
