@@ -48,3 +48,7 @@ const encrypt = () => {
 const desdesencrypt = () => {
     console.log('desdesencrypt')
 }
+
+const copy = () => {
+    alert('Texto copiado')
+}
