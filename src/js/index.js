@@ -13,10 +13,7 @@ const encrypt = () => {
     let getText = document.getElementById('text').value
 
     if(getText === ''){
-        console.log('entre')
-        printText.innerHTML = `
-            <p class="vacio">Favor de ingrear un texto</p>
-        `
+        isEmpty()
     } else {
         getText = getText.toLowerCase() // volvemos a minusculas el texto
 
@@ -37,26 +34,47 @@ const encrypt = () => {
         }
     }
 
-    // console.log('nuevo arreglo', arreglo) <p class="result-text">${getText}</p>
     getText = arreglo.join('') // Convetimos el array en un string de nuevo
-    /* console.log("🚀 ~ getText", getText) */
+
+    }
+
+    printResult(getText)
+    clearInput()
+    
+}
+
+const desdesencrypt = () => {
+    let getText = document.getElementById('text').value
+
+    if( getText === ''){
+        isEmpty()
+    }else{
+        console.log('Im no empty')
+    }
+}
+
+const copy = () => {
+    alert('Texto copiado')
+}
+
+const isEmpty = () => {
+    console.log('entre')
+        printText.innerHTML = `
+            <p class="vacio">Favor de ingrear un texto</p>
+        `
+}
+
+const printResult = (text) => {
     printText.innerHTML=`
         <div id="result-container">
-            <textarea disable class="result-text test" cols="20" rows="22">${getText}</textarea>
+            <textarea disable class="result-text test" cols="20" rows="22">${text}</textarea>
         </div>
         <div id="copy">
             <button class="btn btn-copy" onclick="copy()">Copiar</button>
         </div>
     `
-    }
-    
+}
+
+const clearInput = () => {
     document.getElementById("text").value = ""
-}
-
-const desdesencrypt = () => {
-    console.log('desdesencrypt')
-}
-
-const copy = () => {
-    alert('Texto copiado')
 }
