@@ -10,9 +10,15 @@
 let printText = document.getElementById('console')
 
 const encrypt = () => {
-    console.log('encrypt')
     let getText = document.getElementById('text').value
-    getText = getText.toLowerCase() // volvemos a minusculas el texto
+
+    if(getText === ''){
+        console.log('entre')
+        printText.innerHTML = `
+            <p class="vacio">Favor de ingrear un texto</p>
+        `
+    } else {
+        getText = getText.toLowerCase() // volvemos a minusculas el texto
 
     let arreglo = getText.split('') // convertimos el string en una array
 
@@ -33,7 +39,7 @@ const encrypt = () => {
 
     // console.log('nuevo arreglo', arreglo) <p class="result-text">${getText}</p>
     getText = arreglo.join('') // Convetimos el array en un string de nuevo
-    console.log("🚀 ~ getText", getText)
+    /* console.log("🚀 ~ getText", getText) */
     printText.innerHTML=`
         <div id="result-container">
             <textarea disable class="result-text test" cols="20" rows="22">${getText}</textarea>
@@ -42,6 +48,8 @@ const encrypt = () => {
             <button class="btn btn-copy" onclick="copy()">Copiar</button>
         </div>
     `
+    }
+    
     document.getElementById("text").value = ""
 }
 
