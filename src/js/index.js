@@ -15,6 +15,7 @@ const encrypt = () => {
     if(getText === ''){
         isEmpty()
     } else {
+        
         getText = getText.toLowerCase() // volvemos a minusculas el texto
 
     let arreglo = getText.split('') // convertimos el string en una array
@@ -35,12 +36,11 @@ const encrypt = () => {
     }
 
     getText = arreglo.join('') // Convetimos el array en un string de nuevo
+    printResult(getText)
+    clearInput()
 
     }
 
-    printResult(getText)
-    clearInput()
-    
 }
 
 const desdesencrypt = () => {
@@ -50,6 +50,8 @@ const desdesencrypt = () => {
         isEmpty()
     }else{
         console.log('Im no empty')
+        printResult(getText)
+        clearInput()
     }
 }
 
