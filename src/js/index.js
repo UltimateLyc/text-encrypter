@@ -15,29 +15,29 @@ const encrypt = () => {
     if(getText === ''){
         isEmpty()
     } else {
-        
+
         getText = getText.toLowerCase() // volvemos a minusculas el texto
 
-    let arreglo = getText.split('') // convertimos el string en una array
+        let array = getText.split('') // convertimos el string en una array
 
-    for( let i = 0; i < arreglo.length; i++)
-    {
-        if(arreglo[i] === 'a'){
-            arreglo[i] = 'ai'
-        } else if (arreglo[i] ===  'e') {
-            arreglo[i] = 'enter'
-        } else if (arreglo[i] ===  'i') {
-            arreglo[i] = 'imes'
-        } else if (arreglo[i] ===  'o') {
-            arreglo[i] = 'ober'
-        } else if (arreglo[i] ===  'u') {
-            arreglo[i] = 'ufat'
+        for( let i = 0; i < array.length; i++)
+        {
+            if(array[i] === 'a'){
+                array[i] = 'ai'
+            } else if (array[i] ===  'e') {
+                array[i] = 'enter'
+            } else if (array[i] ===  'i') {
+                array[i] = 'imes'
+            } else if (array[i] ===  'o') {
+                array[i] = 'ober'
+            } else if (array[i] ===  'u') {
+                array[i] = 'ufat'
+            }
         }
-    }
 
-    getText = arreglo.join('') // Convetimos el array en un string de nuevo
-    printResult(getText)
-    clearInput()
+        getText = array.join('') // Convetimos el array en un string de nuevo
+        printResult(getText)
+        clearInput()
 
     }
 
@@ -49,7 +49,36 @@ const desdesencrypt = () => {
     if( getText === ''){
         isEmpty()
     }else{
-        console.log('Im no empty')
+        getText = getText.toLowerCase() // volvemos a minusculas el texto
+
+        let array = getText.split('') // convertimos el string en una array
+
+        for( let i = 0; i < array.length; i++)
+        {
+            if(array[i]=== 'o'){
+                if(array[i+1] === 'b'){ // for O
+                    array.splice(i, 4, 'o')
+                }
+            }else if(array[i] === 'a'){ // for A
+                if(array[i+1] === 'i'){
+                    array.splice(i, 2, 'a')
+                }
+            }else if (array[i] === 'e'){ // for E
+                if(array[i+1] === 'n'){
+                    array.splice(i,5, 'e')
+                }
+            }else if(array[i] === 'i'){ // for I
+                if(array[i+1] === 'm'){
+                    array.splice(i, 4, 'i')
+                }
+            }else if(array[i] === 'u'){ // for U
+                if(array[i+1] === 'f'){
+                    array.splice(i, 4, 'u')
+                }
+            }
+        }
+
+        getText = array.join('')
         printResult(getText)
         clearInput()
     }
