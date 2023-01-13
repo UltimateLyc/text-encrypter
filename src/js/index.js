@@ -88,6 +88,13 @@ const desdesencrypt = () => {
 }
 
 const copy = () => {
+    let getResultText = document.getElementById('result').value
+    let selection = document.createRange()
+    selection.selectNodeContents(getResultText)
+    window.getSelection().removeAllRanges()
+    window.getSelection().addRange(selection)
+    let copy = document.execCommand('copy')
+    window.getSelection().removeRange(selection)
     alert('Texto copiado')
 }
 
@@ -102,7 +109,7 @@ const printResult = (array) => {
     let newText = array.join('') // Convetimos el array en un string de nuevo
     printText.innerHTML=`
         <div id="result-container">
-            <textarea disable class="result-text test" cols="20" rows="22">${newText}</textarea>
+            <textarea disable id="result" class="result-text test" cols="20" rows="22">${newText}</textarea>
         </div>
         <div id="copy">
             <button class="btn btn-copy" onclick="copy()">Copiar</button>
